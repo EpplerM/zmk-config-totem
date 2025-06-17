@@ -1,12 +1,22 @@
 # Copyright (c) 2022 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-if SHIELD_TOTEM_LEFT
+if SHIELD_TOTEM_CENTRAL
 
 config ZMK_KEYBOARD_NAME
     default "ME_TOTEM_1"
     
 config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+config ZMK_USB
+    default y
+config ZMK_BLE_CENTRAL_PERIPHERAL_COUNT
+    default 2
+config BT_MAX_CONN
+    default 3
+config ZMK_BLE_CENTRAL
+    default y
+config ZMK_SPLIT
     default y
 
 endif
@@ -14,6 +24,8 @@ endif
 if SHIELD_TOTEM_LEFT || SHIELD_TOTEM_RIGHT
 
 config ZMK_SPLIT
+    default y
+config ZMK_BLE_PERIPHERAL_ONLY
     default y
 
 endif
